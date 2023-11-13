@@ -52,7 +52,7 @@ const Home = () => {
                                             value={usdValue}
                                             onChange={handleUSDInputChange}
                                             placeholder='Enter USD'
-                                            style={{ fontWeight: 'bold', border: 'none', fontSize: '18px' }}
+                                            style={{ fontWeight: 'bold', border: 'none', fontSize: '18px',width: '4em' }}
                                         />USD</h2>
                                 </div>
 
@@ -72,7 +72,12 @@ const Home = () => {
                                             max={1e6}
                                             value={exchangeRate}
                                             placeholder='Enter CNY'
-                                            style={{ fontWeight: 'bold', border: 'none', fontSize: '18px',alignItems: 'center' }}></input>CNY</h2>
+                                            style={{
+                                                border: 'none',
+                                                fontSize: '18px',
+                                                lineHeight: '18px', // 设置文本垂直居中
+                                                width: '3em'
+                                              }}></input>CNY</h2>
                                     <p>包话 Payoneer 转换费</p>
                                 </div>
                             </div>
@@ -84,23 +89,23 @@ const Home = () => {
                                 <div>
                                     <p>存款 到 中国银行 （9550）</p>
                                     <h2>
-                                        <input className='money' type='number' style={{ border: 'none', fontSize: '18px',alignItems: 'center' }} min={10} max={1e6} value={cnyValue} placeholder="Enter CNY"></input>
+                                        <input className='money' type='number'  style={{ border: 'none', fontSize: '18px',alignItems: 'center'  }} min={10} max={1e6} value={cnyValue} placeholder="Enter CNY"></input>
                                         CNY</h2>
                                 </div>
                             </div>
                         </div>
                         <hr />
                         <div className='desc'>
-                            <p>想看</p>
+                            <p>描述</p>
                             <div className='sub flex'>
                                 <div>
                                     <svg stroke="var(--primary)" fill="var(--primary)" stroke-width="0" viewBox="0 0 32 32" height="1.4em" width="1.4em" xmlns="http://www.w3.org/2000/svg"><path d="M 25 4.03125 C 24.234375 4.03125 23.484375 4.328125 22.90625 4.90625 L 13 14.78125 L 12.78125 15 L 12.71875 15.3125 L 12.03125 18.8125 L 11.71875 20.28125 L 13.1875 19.96875 L 16.6875 19.28125 L 17 19.21875 L 17.21875 19 L 27.09375 9.09375 C 28.246094 7.941406 28.246094 6.058594 27.09375 4.90625 C 26.515625 4.328125 25.765625 4.03125 25 4.03125 Z M 25 5.96875 C 25.234375 5.96875 25.464844 6.089844 25.6875 6.3125 C 26.132813 6.757813 26.132813 7.242188 25.6875 7.6875 L 16 17.375 L 14.28125 17.71875 L 14.625 16 L 24.3125 6.3125 C 24.535156 6.089844 24.765625 5.96875 25 5.96875 Z M 4 8 L 4 28 L 24 28 L 24 14.8125 L 22 16.8125 L 22 26 L 6 26 L 6 10 L 15.1875 10 L 17.1875 8 Z"></path></svg>
                                 </div>
-                                <p className='p1'>編輯</p>
+                                <p className='p1'>添加</p>
                             </div>
                             <div className='sub flex'>
                                 <input className='checkbox' type="checkbox" />
-                                <p>我确认以上提款， 他将由中话人民共和国许可的服务提供商处理，如果由以下服务商处理，我同意受其服务协议的约束。</p>
+                                <p>我确认以上提款， 他将由中华人民共和国许可的服务提供商处理，如果由以下服务商处理，我同意受其服务协议的约束。</p>
                             </div>
                             <div className='sm flex'>
                                 <p>-</p>
@@ -129,7 +134,7 @@ const Home = () => {
                             <div>
                                 <p>存款金额可能会由银行或第三方服务机构收取费用，点击“提款”，表示你确认上方的提款详情</p>
                             </div>
-                            <button className='btn'>查看</button>
+                            <button className='btn'>提款</button>
                         </div>
                     </div>
                 </div>
@@ -158,7 +163,7 @@ const Section = styled.section`
                     .money {
                         width: 7em;
                         margin: 5px 5px 5px 0px;
-                        height: 2em;
+                        height: 1em;
                     }
                     
                 }
@@ -169,7 +174,10 @@ const Section = styled.section`
 
             }
             .desc {
-                padding-top: 0.7em;
+                padding-top: 0.3em;
+                p {
+                    font-size: 0.65em; /* 设置较小的字体大小，可以根据需要调整值 */
+                }
                 .checkbox {
                     width: 20px;
                     height: 20px;
@@ -183,8 +191,11 @@ const Section = styled.section`
                 }
             }
             .footer {
+                p {
+                    font-size: 0.65em; /* 设置较小的字体大小，可以根据需要调整值 */
+                }
                 text-align: center;
-                height: 10em;
+                height: 8em;
                 display: flex;
                 flex-wrap: wrap;
                 align-content: flex-end;
